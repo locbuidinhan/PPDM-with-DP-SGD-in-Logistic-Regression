@@ -1,10 +1,3 @@
-Lỗi giao diện của README **không phải do GitHub**, mà do **Markdown bị thụt đầu dòng sai** và **thiếu code block cho cây thư mục**.
-Tôi đưa bạn **PHIÊN BẢN ĐÃ SỬA CHUẨN MARKDOWN**.
-👉 **Copy toàn bộ, ghi đè README.md hiện tại**.
-
----
-
-````markdown
 ## 1. Overview
 
 This project implements *Privacy-Preserving Data Mining (PPDM)* using  
