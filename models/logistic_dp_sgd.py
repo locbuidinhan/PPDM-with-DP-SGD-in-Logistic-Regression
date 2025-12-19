@@ -99,23 +99,23 @@ class LogisticRegressionDPSGD:
                 if len(yb) == 0:
                     continue
 
-                # 1) Per-example gradients
+                # Per-example gradients
                 per_ex_grads = self._per_example_grads(Xb, yb)
 
-                # 2) Clip gradients
+                # Clip gradients
                 clipped_grads = self._clip(per_ex_grads)
 
-                # 3) Average
+                # Average
                 avg_grad = clipped_grads.mean(axis=0)
 
-                # 4) Add noise
+                # Add noise
                 noisy_grad = self._add_noise(avg_grad, len(yb))
 
                 # Split weight and bias gradients
                 grad_w = noisy_grad[:-1]
                 grad_b = noisy_grad[-1]
 
-                # 5) Parameter update
+                # Parameter update
                 self.w -= self.lr * grad_w
                 self.b -= self.lr * grad_b
 
