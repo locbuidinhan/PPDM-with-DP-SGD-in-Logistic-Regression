@@ -3,7 +3,7 @@ from models.logistic_dp_sgd import LogisticRegressionDPSGD
 from utils.preprocessing import load_and_preprocess
 from utils.plotting import plot_noise_tradeoff
 
-noise_levels = [0.5, 1.0, 2.0]
+noise_levels = [3.25, 6.5, 13.0, 65]
 results = []
 
 X_train, X_test, y_train, y_test, _ = load_and_preprocess()

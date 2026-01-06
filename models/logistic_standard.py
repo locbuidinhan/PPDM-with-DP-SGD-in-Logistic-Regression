@@ -13,6 +13,9 @@ class LogisticRegressionScratch:
         self.train_acc = []
         self.test_acc = []
 
+        self.train_losses = []
+
+
     def fit(self, X, y, X_val=None, y_val=None):
         n_samples, n_features = X.shape
         self.w = np.zeros(n_features)
@@ -42,6 +45,10 @@ class LogisticRegressionScratch:
 
             # ---- Logging per epoch ----
             train_probs = self.predict_proba(X)
+            
+            train_loss = compute_loss(y, train_probs)
+            self.train_losses.append(train_loss)
+
             train_acc = ((train_probs >= 0.5) == y).mean()
             self.train_acc.append(train_acc)
 
