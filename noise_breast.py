@@ -13,7 +13,7 @@ for sigma in noise_levels:
         lr=0.03,
         epochs=100,
         batch_size=32,      
-        clip_norm=1.0,
+        clip_norm=4.0,
         noise_multiplier=sigma
     )
 

@@ -11,10 +11,10 @@ X_train, X_test, y_train, y_test = load_and_preprocess_emnist(
 
 for sigma in noise_levels:
     model = LogisticRegressionDPSGD(
-        lr=0.03,
+        lr=0.005,
         epochs=100,
         batch_size=128,
-        clip_norm=1.0,
+        clip_norm=16.0,
         noise_multiplier=sigma
     )
 
