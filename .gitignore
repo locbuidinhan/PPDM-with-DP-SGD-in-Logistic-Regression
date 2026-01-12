@@ -11,6 +11,7 @@ data/*
 # Figures: only keep result images
 figures/*
 !figures/*.png
+!figures/*.txt
 
 .DS_Store
 Thumbs.db

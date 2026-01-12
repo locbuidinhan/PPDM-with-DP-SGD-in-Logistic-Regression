@@ -39,5 +39,11 @@ plot_learning_curve(
 y_pred = model.predict(X_test)
 y_proba = model.predict_proba(X_test)
 
-print("DP-SGD Logistic Regression (Breast Cancer)")
-print(evaluate_model(y_test, y_pred, y_proba))
+results = evaluate_model(y_test, y_pred, y_proba)
+
+with open("figures/result_for_breast_dp_sgd.txt", "w") as f:
+    f.write("Results for Breast Cancer – DP-SGD Logistic Regression\n")
+    f.write("-" * 50 + "\n")
+    f.write(str(results))
+
+print(results)

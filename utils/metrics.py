@@ -7,6 +7,5 @@ def evaluate_model(y_true, y_pred, y_probs):
         "recall": recall_score(y_true, y_pred, zero_division=0),
         "f1": f1_score(y_true, y_pred, zero_division=0),
         "auc": roc_auc_score(y_true, y_probs),
-        "confusion_matrix": confusion_matrix(y_true, y_pred)
     }
     return metrics

@@ -31,5 +31,11 @@ plot_learning_curve(
 y_pred = model.predict(X_test)
 y_proba = model.predict_proba(X_test)
 
-print("Non-DP Logistic Regression (Breast Cancer)")
-print(evaluate_model(y_test, y_pred, y_proba))
+results = evaluate_model(y_test, y_pred, y_proba)
+
+with open("figures/result_for_breast_non_dp.txt", "w") as f:
+    f.write("Results for Breast Cancer – Non-DP Logistic Regression\n")
+    f.write("=" * 50 + "\n")
+    f.write(str(results))
+
+print(results)

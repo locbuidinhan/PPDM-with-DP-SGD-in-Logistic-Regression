@@ -3,6 +3,7 @@ from utils.preprocessing_emnist import load_and_preprocess_emnist
 from utils.metrics import evaluate_model
 from utils.plotting import plot_learning_curve
 from models.logistic_standard import LogisticRegressionScratch
+import os
 
 X_train, X_test, y_train, y_test = load_and_preprocess_emnist(
     binary_mode=BINARY_MODE
@@ -26,4 +27,13 @@ plot_learning_curve(
 y_pred = model.predict(X_test)
 y_proba = model.predict_proba(X_test)
 
-print(evaluate_model(y_test, y_pred, y_proba))
+results = evaluate_model(y_test, y_pred, y_proba)
+
+os.makedirs("figures", exist_ok=True)
+
+with open("figures/result_for_emnist_non_dp.txt", "w") as f:
+    f.write("Results for EMNIST Non-DP Logistic Regression\n")
+    f.write("=" * 50 + "\n")
+    f.write(str(results))
+
+print(results)
