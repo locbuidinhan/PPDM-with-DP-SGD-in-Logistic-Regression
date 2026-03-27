@@ -3,16 +3,7 @@ __pycache__/
 *.pyo
 venv/
 .env/
-
-# Data: keep folder, ignore raw data
-data/*
-!data/.gitkeep
-
-# Figures: only keep result images
-figures/*
-!figures/*.png
-!figures/*.txt
-
+data/
 .DS_Store
 Thumbs.db
 .vscode/
